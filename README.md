@@ -12,7 +12,7 @@ Rollouts are completely random and the player only cares about its own score, co
 
 The second term steers exploration towards moves that score points right away, and away from moves that lose points. 
 
-## Data structures
+## Path tracking
 
 Efficiently keeping track of the score was important for this challenge, especially because I also wanted to be able to undo moves in constant time. Since paths are the key to everything, and paths start and end at the midpoint of a grid edge, I decided to track those, instead of grid cells. I kept track of two properties for each midpoint: the midpoint at the other end of the path starting at this midpoint, and the length of that path. This means connecting two paths only requires me to update the information at either end.
 
